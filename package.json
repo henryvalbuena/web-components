@@ -1,0 +1,53 @@
+{
+  "name": "node-docker",
+  "version": "0.1.0",
+  "description": "Startup template development enviroment for node and express using docker",
+  "main": "api/index.js",
+  "scripts": {
+    "build": "rimraf dist/ && babel api -d dist --copy-files",
+    "serve": "yarn run build && dotenv -e envs/.env node dist/index.js",
+    "watch": "nodemon -w api --exec yarn run serve",
+    "watch:test": "dotenv -e envs/test.env yarn run watch",
+    "fix": "eslint api --fix",
+    "lint": "eslint api",
+    "test:e2e": "dotenv -e envs/test.env -e envs/.env cucumber-js -- spec/cucumber/features --require-module @babel/register --require spec/cucumber/steps",
+    "test:unit": "mocha 'api/**/*.test.js' --require @babel/register"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint"
+    }
+  },
+  "author": "Henry Valbuena <dev.henryvm@gmail.com>",
+  "license": "MIT",
+  "repository": "repository",
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/node": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/register": "^7.4.4",
+    "cucumber": "^5.1.0",
+    "dotenv-cli": "^2.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "husky": "^3.0.0",
+    "lodash.clonedeep": "^4.5.0",
+    "lodash.isequal": "^4.5.0",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
+    "rimraf": "^2.6.3",
+    "sinon": "^7.4.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "ajv": "^6.10.2",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "pg": "^7.12.1",
+    "superagent": "^5.1.0"
+  }
+}

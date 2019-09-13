@@ -1,0 +1,15 @@
+sudo: required
+services:
+  - docker
+
+install:
+  - docker-compose up -d
+
+before_script:
+  - sudo /etc/init.d/postgresql stop
+
+script:
+  - docker exec -it api yarn run test:unit
+
+after_script:
+  - docker-compose down
