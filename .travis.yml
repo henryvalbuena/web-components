@@ -2,14 +2,17 @@ sudo: required
 services:
   - docker
 
-install:
-  - docker-compose up -d
-
-before_script:
+before_install:
   - sudo /etc/init.d/postgresql stop
 
+install:
+  - docker-compose up --build
+  - sleep 5
+
 script:
-  - docker exec -it api yarn run test:unit
+  - docker images
+  - docker ps
+  - curl localhost:4000
 
 after_script:
   - docker-compose down

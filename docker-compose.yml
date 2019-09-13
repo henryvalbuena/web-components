@@ -2,7 +2,7 @@ version: "3"
 services:
   api:
     container_name: api
-    restart: always
+    # restart: always
     build: .
     ports:
       - "4000:4000"
@@ -12,6 +12,7 @@ services:
       - postgres_db
   postgres_db:
     container_name: postgres_db
+    # restart: always
     image: postgres
     expose:
       - "5432"
