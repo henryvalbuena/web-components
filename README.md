@@ -1,34 +1,4 @@
-# Project Template Specifics
-
-## Setup Reference
-[postgres](https://node-postgres.com/features/pooling)
-[express](https://expressjs.com/)
-[docker-compose](https://dev.to/kellyjandrews/using-docker-compose-for-nodejs-development)
-
-## Commands to Build and Run
-
-> Notice that project_name matches the service name used in *docker-compose.yaml*
-
-### Build and Run Container
-```
-docker-compose up
-```
-### Stop Container
-```
-docker-compose down
-```
-
-### Re-Build before start
-```
-docker-compose up --build
-```
-
-# Readme Template
-
-[Template link](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-by [@PurpleBooth](https://github.com/PurpleBooth)
-
-# Project Title
+# Web Components
 
 One Paragraph of project description goes here
 
@@ -84,27 +54,11 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+`Yarn start`
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+We use [SemVer](http://semver.org/) for versioning.
 
 ## License
 
@@ -112,6 +66,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Robin Wieruch [Web Components Intro](https://www.robinwieruch.de/web-components-tutorial)
